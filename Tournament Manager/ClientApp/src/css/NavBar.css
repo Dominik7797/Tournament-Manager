@@ -1,0 +1,28 @@
+﻿.NavElement {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.App {
+    text-align: center;
+}
+
+.App-link {
+    color: #61dafb;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 5px;
+}
+
+.App-header {
+    background-color: #2196f3;
+}
+
+
