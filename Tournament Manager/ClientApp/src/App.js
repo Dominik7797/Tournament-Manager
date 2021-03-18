@@ -16,16 +16,16 @@ function App() {
         <Router>
                 <nav>
                     <ul>
-                        <li className="NavElement">
+                        <li>
                             <Link to="/" className="NavElementLink">Home</Link>
                         </li>
-                        <li className="NavElement">
+                        <li>
                             <Link to="/tournaments" className="NavElementLink">Tournaments</Link>
                         </li>
-                        <li className="NavElement">
+                        <li>
                             <Link to="/leaderboard" className="NavElementLink">Leaderboard</Link>
                         </li>
-                        <li className="NavElement">
+                        <li>
                             <Link to="/account" className="NavElementLink">Account</Link>
                         </li>
                     </ul>
