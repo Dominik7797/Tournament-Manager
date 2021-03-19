@@ -2,8 +2,8 @@
 
 function Home(){
     return (
-        <div>
-            Works
+        <div className="MainPage">
+            <p className="mainTitle">TOURNAMENT MANAGER</p>
         </div>
     );
 }
