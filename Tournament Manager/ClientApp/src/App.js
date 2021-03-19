@@ -6,6 +6,11 @@ import {
     Link
 } from "react-router-dom";
 import Home from './components/Home'
+import Login from './components/Login'
+import Register from './components/Register'
+import Tournaments from './components/Tournaments'
+import Account from './components/Account'
+import Leaderboard from './components/Leaderboard'
 import '../src/css/NavBar.css'
 
 function App() {
@@ -13,42 +18,39 @@ function App() {
             <div className="App">
                 <header className="App-header">
                 </header>
-        <Router>
-                <nav>
-                    <ul>
-                        <li>
-                            <Link to="/" className="NavElementLink">Home</Link>
-                        </li>
-                        <li>
-                            <Link to="/tournaments" className="NavElementLink">Tournaments</Link>
-                        </li>
-                        <li>
-                            <Link to="/leaderboard" className="NavElementLink">Leaderboard</Link>
-                        </li>
-                        <li>
-                            <Link to="/account" className="NavElementLink">Account</Link>
-                        </li>
-                    </ul>
-                </nav>
-                <Switch>
-                    <Route path="/">
-                        <Home />
-                    </Route>
-                    <Route path="/tournaments">
-                        <Home />
-                    </Route>
-                    <Route path="/leaderboard">
-                        <Home />
-                    </Route>
-                    <Route path="/login">
-                        <Home />
-                    </Route>
-                    <Route path="/register">
-                        <Home />
-                    </Route>
-                </Switch>
-                </Router>
-                </div>
+            <Router>
+                    <nav>
+                        <ul>
+                            <li>
+                                <Link to="/" >Home</Link>
+                            </li>
+                            <li>
+                                <Link to="/tournaments" >Tournaments</Link>
+                            </li>
+                            <li>
+                                <Link to="/leaderboard" >Leaderboard</Link>
+                            </li>
+                            <li>
+                                <Link to="/account" >Account</Link>
+                            </li>
+                        </ul>
+                    </nav>
+                    <Switch>
+                        <Route path="/tournaments">
+                            <Tournaments />
+                        </Route>
+                        <Route path="/account">
+                            <Account />
+                        </Route>
+                        <Route path="/leaderboard">
+                            <Leaderboard />
+                        </Route>
+                        <Route path="/">
+                            <Home />
+                        </Route>
+                    </Switch>
+            </Router>
+            </div>
     );
 }
 export default App;
