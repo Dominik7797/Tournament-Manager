@@ -6,14 +6,15 @@ using System.Threading.Tasks;
 
 namespace Tournament_Manager.Models
 {
-    public class Tournament
+    public class User
     {
         [Key]
         public int Id { get; set; }
         public string Name { get; set; }
-        public int Size { get; set; }
-        public int BraketSize { get; set; }
+        public string Email { get; set; }
         public string Password { get; set; }
-        public DateTime StartDate { get; set; }
+        public int TournamentId { get; set; }
+        public int Wins { get; set; }
+        public int PlayedTournaments { get; set; }
     }
 }
