@@ -30,7 +30,6 @@
 
   <ItemGroup>
     <Folder Include="ClientApp\src\images\" />
-    <Folder Include="Controllers\" />
     <Folder Include="Services\" />
   </ItemGroup>
 

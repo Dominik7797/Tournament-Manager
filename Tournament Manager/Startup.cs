@@ -33,6 +33,9 @@ namespace Tournament_Manager
 
             services.AddDbContext<TournamentContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("DevConnection")));
             services.AddDbContext<UserContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("DevConnection")));
+            services.AddScoped<ITournamentRepository, SQLTournamentRepository>();
+            services.AddScoped<ITournamentManagerRepository, SQLTournamentManagerRepository>();
+            services.AddScoped<IUsersRepository, SQLUsersRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
