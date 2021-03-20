@@ -12,6 +12,8 @@ import Tournaments from './components/Tournaments'
 import Account from './components/Account'
 import Leaderboard from './components/Leaderboard'
 import '../src/css/NavBar.css'
+import '../src/css/MainPageCSS.css'
+import TournamentCreator from './components/TournamentCreator';
 
 function App() {
     return (
@@ -44,6 +46,9 @@ function App() {
                         </Route>
                         <Route path="/leaderboard">
                             <Leaderboard />
+                        </Route>
+                        <Route path="/tournament-create">
+                            <TournamentCreator />
                         </Route>
                         <Route path="/">
                             <Home />
