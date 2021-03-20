@@ -1,7 +1,6 @@
 ﻿import React from 'react';
 import { Link } from 'react-router-dom';
 import '../../src/css/MainPageCSS.css'
-import TournamentCreator from './TournamentCreator';
 
 function Home() {
 
