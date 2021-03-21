@@ -21,15 +21,17 @@ li {
     margin: 10px;
 }
 
-    li link {
-        color: white;
-        padding: 14px 25px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-    }
-
-        li link:hover {
-            background-color: #111;
-        }
+.linkButton {
+    background-color: #2a2b2dff;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+    text-decoration: none;
+}
 

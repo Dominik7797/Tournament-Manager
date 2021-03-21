@@ -24,16 +24,16 @@ function App() {
                     <nav>
                         <ul>
                             <li>
-                                <Link to="/" >Home</Link>
+                                <Link className="linkButton" to="/" >Home</Link>
                             </li>
                             <li>
-                                <Link to="/tournaments" >Tournaments</Link>
+                                <Link className="linkButton" to="/tournaments" >Tournaments</Link>
                             </li>
                             <li>
-                                <Link to="/leaderboard" >Leaderboard</Link>
+                                <Link className="linkButton" to="/leaderboard" >Leaderboard</Link>
                             </li>
                             <li>
-                                <Link to="/account" >Account</Link>
+                                <Link className="linkButton" to="/account" >Account</Link>
                             </li>
                         </ul>
                     </nav>
