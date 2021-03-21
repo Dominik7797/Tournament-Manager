@@ -8,6 +8,15 @@ namespace Tournament_Manager.Models
 {
     public class Tournament
     {
+        public Tournament(string name, int size, int braketSize, string password, DateTime startDate)
+        {
+            Name = name;
+            Size = size;
+            BraketSize = braketSize;
+            Password = password;
+            StartDate = startDate;
+        }
+
         [Key]
         public int Id { get; set; }
         public string Name { get; set; }

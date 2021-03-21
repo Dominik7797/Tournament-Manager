@@ -4,6 +4,10 @@
     color: white;
 }
 
+.mainPage{
+    
+}
+
 .btnCreateTournament {
     background-color: #2a2b2dff;
     border: none;
@@ -32,7 +36,7 @@
     justify-content: center;
 }
 
-.App {
+body {
     background-color: #d9514eff;
     background-size: cover;
     font-family: sans-serif;
