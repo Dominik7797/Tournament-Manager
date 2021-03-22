@@ -1,15 +1,21 @@
-﻿import React from 'react';
+﻿import React, { useState, useEffect} from 'react';
 import axios from 'axios';
+import TournamentCard from './TournamentCard';
 
 function Tournaments() {
+    const [tournaments, setTournaments] = useState([]);
+
     const getData = () => {
-        axios.get("/tournamentApi").then(data => console.log(data.data));
+        axios.get("/tournamentApi").then(data => setTournaments(data.data));
     }
+
+    useEffect(() => {
+        getData();
+    }, []);
 
     return (
         <div>
-            Tournaments
-            <button onClick={getData}>TEST ME</button>
+            {tournaments.map(tournament => <TournamentCard tournament={tournament} />)}
         </div>
     );
 }

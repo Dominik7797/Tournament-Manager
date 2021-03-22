@@ -10,11 +10,14 @@ function TournamentCreator() {
         let password = event.target.password.value;
         let datetime = event.target.applytime.value;
 
+        if (password.length == 0) {
+            password = "0";
+        }
         axios.post(`/Tournament-create/tournamentName=${tournamentName}&tsize=${tournamentSize}&ttsize=${tournamentBracketSize}&password=${password}&applytime=${datetime}`)
     }
 
     return (
-        <form className="creatorForm" onSubmit={createTournament} action="/action_page.php">
+        <form className="creatorForm" onSubmit={createTournament}>
                 <label htmlFor="tname">Tournament Name</label>
                 <input type="text" id="tname" name="tournamentName" placeholder="Tournament name.."/>
                 <label htmlFor="tsize">Tournament Size</label>
