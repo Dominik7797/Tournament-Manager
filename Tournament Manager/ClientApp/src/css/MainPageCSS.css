@@ -4,8 +4,20 @@
     color: white;
 }
 
-.mainPage{
-    
+.top {
+    background-color: #d9514eff;
+}
+
+.middle {
+    background-color: #2a2b2dff;
+    top: 40%;
+    position: absolute;
+}
+
+.bottom {
+    background-color: #2a2b2dff;
+    top: 60%;
+    position: absolute;
 }
 
 .btnCreateTournament {
