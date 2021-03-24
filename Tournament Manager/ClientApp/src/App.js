@@ -14,49 +14,40 @@ import Leaderboard from './components/Leaderboard'
 import '../src/css/NavBar.css'
 import '../src/css/MainPageCSS.css'
 import TournamentCreator from './components/TournamentCreator';
-
+import TournamentNavbar from './components/TournamentNavbar';
 function App() {
     return (
             <div className="App">
                 <header className="App-header">
                 </header>
             <Router>
-                    <nav>
-                        <ul>
-                            <li>
-                                <Link className="linkButton" to="/" >Home</Link>
-                            </li>
-                            <li>
-                                <Link className="linkButton" to="/tournaments" >Tournaments</Link>
-                            </li>
-                            <li>
-                                <Link className="linkButton" to="/leaderboard" >Leaderboard</Link>
-                            </li>
-                            <li>
-                                <Link className="linkButton" to="/account" >Account</Link>
-                            </li>
-                        </ul>
-                    </nav>
                     <Switch>
                         <Route path="/tournaments">
+                            <TournamentNavbar />
                             <Tournaments />
                         </Route>
                         <Route path="/account">
+                            <TournamentNavbar />
                             <Account />
                         </Route>
                         <Route path="/leaderboard">
+                            <TournamentNavbar />
                             <Leaderboard />
                         </Route>
                         <Route path="/tournament-create">
+                            <TournamentNavbar />
                             <TournamentCreator />
                         </Route>
                         <Route path="/login">
+                            <TournamentNavbar />
                             <Login />
                         </Route>
                         <Route path="/register">
+                            <TournamentNavbar />
                             <Register />
                         </Route>
                         <Route path="/">
+                            <TournamentNavbar />
                             <Home />
                         </Route>
                     </Switch>

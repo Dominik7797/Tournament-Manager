@@ -20,6 +20,7 @@
     position: absolute;
 }
 
+
 .btnCreateTournament {
     border-radius: 1.5rem;
     background-color: #2a2b2dff;
@@ -51,6 +52,5 @@
 
 body {
     background-color: #d9514eff;
-    background-size: cover;
     font-family: sans-serif;
 }

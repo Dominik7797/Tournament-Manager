@@ -15,8 +15,6 @@ function TournamentCard(props) {
         width: "350px",
         height: "215px",
         display: "inline-block",
-        borderStyle: "solid",
-        borderRadius: "30px",
         margin: "20px",
         padding: "5px",
         backgroundColor: "#2a2b2dff",
