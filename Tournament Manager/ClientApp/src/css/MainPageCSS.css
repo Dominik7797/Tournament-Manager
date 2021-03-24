@@ -21,6 +21,7 @@
 }
 
 .btnCreateTournament {
+    border-radius: 1.5rem;
     background-color: #2a2b2dff;
     border: none;
     color: white;

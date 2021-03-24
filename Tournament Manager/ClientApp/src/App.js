@@ -50,6 +50,12 @@ function App() {
                         <Route path="/tournament-create">
                             <TournamentCreator />
                         </Route>
+                        <Route path="/login">
+                            <Login />
+                        </Route>
+                        <Route path="/register">
+                            <Register />
+                        </Route>
                         <Route path="/">
                             <Home />
                         </Route>
