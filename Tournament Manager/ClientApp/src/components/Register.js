@@ -98,7 +98,7 @@ export default function Register() {
             }
             {isValidUsername === true && isValidEmail === true && password === passwordRe &&
                 <button type="submit" style={{
-                    border: 'none', borderRadius: '1.5rem',
+                    border: 'none',
                     padding: '1%', width: '12%', cursor: 'pointer', background: '#0062cc', color: '#fff'
                 }}>Register</button>
             }

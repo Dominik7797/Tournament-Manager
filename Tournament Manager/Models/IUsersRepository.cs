@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Tournament_Manager.Models
 {
-    interface IUsersRepository
+    public interface IUsersRepository
     {
         User GetUser(int id);
         IEnumerable<User> GetAllUsers();
@@ -14,5 +14,7 @@ namespace Tournament_Manager.Models
         User DeleteUser(int id);
         int GetWonTournaments(int id);
         int GetPlayedTournaments(int id);
+        bool VerifyUser(string username, string email);
+
     }
 }
