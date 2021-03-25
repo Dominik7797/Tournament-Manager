@@ -35,5 +35,11 @@ namespace Tournament_Manager.Controllers
             _tournamentRepository.Add(tournament);
         }
 
+        [HttpGet("/contestants/{id}")]
+        public IEnumerable<User> GetContestants(string id)
+        {
+            return _tournamentManagerRepository.GetTournamentContestants(int.Parse(id));
+        }
+
     }
 }

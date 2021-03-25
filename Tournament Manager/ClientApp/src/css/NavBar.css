@@ -33,5 +33,6 @@ li {
     -moz-appearance: button;
     appearance: button;
     text-decoration: none;
+    border-radius: 1.5rem;
 }
 
