@@ -10,8 +10,8 @@ using Tournament_Manager.Models;
 namespace Tournament_Manager.Migrations
 {
     [DbContext(typeof(TournamentContext))]
-    [Migration("20210320083021_TournamentMigration")]
-    partial class TournamentMigration
+    [Migration("20210325102816_TournamentManager")]
+    partial class TournamentManager
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -42,6 +42,9 @@ namespace Tournament_Manager.Migrations
 
                     b.Property<DateTime>("StartDate")
                         .HasColumnType("datetime2");
+
+                    b.Property<string>("TournamentType")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 

@@ -11,7 +11,6 @@ import Register from './components/Register'
 import Tournaments from './components/Tournaments'
 import Account from './components/Account'
 import Leaderboard from './components/Leaderboard'
-import '../src/css/NavBar.css'
 import '../src/css/MainPageCSS.css'
 import TournamentCreator from './components/TournamentCreator';
 import TournamentNavbar from './components/TournamentNavbar';

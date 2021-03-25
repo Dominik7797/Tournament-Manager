@@ -8,22 +8,9 @@
     background-color: #d9514eff;
 }
 
-.middle {
-    background-color: #2a2b2dff;
-    top: 40%;
-    position: absolute;
-}
-
-.bottom {
-    background-color: #2a2b2dff;
-    top: 60%;
-    position: absolute;
-}
-
-
 .btnCreateTournament {
     border-radius: 1.5rem;
-    background-color: #2a2b2dff;
+    background-color: #343a40;
     border: none;
     color: white;
     padding: 15px 32px;
@@ -51,6 +38,5 @@
 }
 
 body {
-    background-color: #d9514eff;
     font-family: sans-serif;
 }

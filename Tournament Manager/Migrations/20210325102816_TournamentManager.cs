@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Tournament_Manager.Migrations
 {
-    public partial class TournamentMigration : Migration
+    public partial class TournamentManager : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -17,6 +17,7 @@ namespace Tournament_Manager.Migrations
                     Size = table.Column<int>(type: "int", nullable: false),
                     BraketSize = table.Column<int>(type: "int", nullable: false),
                     Password = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    TournamentType = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     StartDate = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
