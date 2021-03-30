@@ -1,8 +1,19 @@
-﻿import React from 'react';
+﻿import React, {useEffect, useState} from 'react';
 import { Link } from 'react-router-dom';
-import '../../src/css/MainPageCSS.css'
+import TournamentCard from './TournamentCard';
+import axios from 'axios';
+import '../../src/css/MainPageCSS.css';
 
 function Home() {
+    const [tournaments, setTournaments] = useState([]);
+
+    const getData = () => {
+        axios.get("/tournamentApi").then(data => setTournaments(data.data));
+    }
+
+    useEffect(() => {
+        getData();
+    }, []);
 
     return (
         <div className="mainPage">
@@ -14,10 +25,8 @@ function Home() {
                 </div>
             </div>
             <div className="middle">
-                I am Middle
-            </div>
-            <div className="bottom">
-                I am Bottom
+                <p className="mainTitleMiddle">FEATURED TOURNAMENTS</p>
+                <div className="tournamentCards">{tournaments.map(tournament => <TournamentCard tournament={tournament} />)}</div>
             </div>
         </div>
     );

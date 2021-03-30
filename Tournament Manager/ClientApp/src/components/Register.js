@@ -59,7 +59,7 @@ export default function Register() {
     }
 
     return (
-        <form onSubmit={formSubmit} style={{ padding: '5%', border: '1px solid #ced4da', marginBottom: '2%' }}>
+        <form onSubmit={formSubmit}>
             <div className="container register-form">
                 <div className="row">
                     <div className="col-md-6">
@@ -99,7 +99,7 @@ export default function Register() {
             {isValidUsername === true && isValidEmail === true && password === passwordRe &&
                 <button type="submit" style={{
                     border: 'none',
-                    padding: '1%', width: '12%', cursor: 'pointer', background: '#0062cc', color: '#fff'
+                    padding: '1%', width: '12%', cursor: 'pointer', background: '#2a2b2dff', color: '#fff'
                 }}>Register</button>
             }
         </form>

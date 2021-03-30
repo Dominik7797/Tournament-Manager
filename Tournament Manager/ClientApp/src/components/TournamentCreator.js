@@ -39,8 +39,8 @@ function TournamentCreator() {
                 <label htmlFor="Typeselect">Select tournament type</label>
                 <select id="Typeselect" name="Typeselect" required>
                     <option name="Tennis" value="Tennis">Tennis</option>
-                    <option name="Football" value="Tennis">Football</option>
-                    <option name="Basketball" value="Tennis">Basketball</option>
+                    <option name="Football" value="Football">Football</option>
+                    <option name="Basketball" value="Basketball">Basketball</option>
                 </select>
                 <input className="createTournamentBtn" type="submit" value="Create Tournament" />
         </form>

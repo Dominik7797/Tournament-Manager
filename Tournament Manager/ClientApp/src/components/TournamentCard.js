@@ -2,6 +2,8 @@
 import axios from 'axios';
 import '../css/TournamentCardCSS.css'
 import TennisImage from "../images/Tennis.jpg";
+import FootballImage from "../images/football.jfif";
+import BasketballImage from "../images/basketball.png";
 
 function TournamentCard(props) {
 
@@ -22,12 +24,15 @@ function TournamentCard(props) {
     const getTournamentPicture = () => {
         if (props.tournament.tournamentType == "Tennis") {
             setTypeImg(TennisImage);
+        }else if (props.tournament.tournamentType == "Football") {
+            setTypeImg(FootballImage);
+        }else if (props.tournament.tournamentType == "Basketball") {
+            setTypeImg(BasketballImage);
         }
     }
 
     return (
-        console.log(typeImg),
-        <div class="tournaments-container">
+        <div class="tournaments-container" style={{display:"inline-block"}}>
             <div class="tournament">
                 <div class="tournament-preview" style={{ backgroundImage: `url(${typeImg})`}}>
                     <h6>Tournament type:</h6>
@@ -41,7 +46,7 @@ function TournamentCard(props) {
                     </div>
                     <h6>Tournament name:</h6>
                     <h2>{props.tournament.name}</h2>
-                    <button class="btn">Continue</button>
+                    <button class="btn">Apply</button>
                 </div>
             </div>
         </div>
