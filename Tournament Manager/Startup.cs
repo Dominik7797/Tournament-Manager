@@ -39,6 +39,7 @@ namespace Tournament_Manager
             services.AddScoped<IUsersRepository, SQLUsersRepository>();
             services.AddTransient<IHashService, HashService>();
             services.AddTransient<ILoginService, LoginService>();
+            services.AddTransient<ICookieService, CookieService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
