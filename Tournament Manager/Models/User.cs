@@ -4,6 +4,13 @@ namespace Tournament_Manager.Models
 {
     public class User
     {
+        public User(string name, string email, string password)
+        {
+            Name = name;
+            Email = email;
+            Password = password;
+        }
+
         [Key]
         public int Id { get; set; }
         public string Name { get; set; }

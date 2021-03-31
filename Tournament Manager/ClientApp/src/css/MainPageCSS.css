@@ -1,29 +1,32 @@
 ﻿.mainTitle {
     text-align: center;
-    font-size: 45px;
+    font-size: 55px;
     color: white;
 }
 
+.mainTitleMiddle {
+    text-align: center;
+    color: black;
+    font-size: 35px;
+}
+
+
 .top {
-    background-color: #d9514eff;
+    background-color: #3c99dc;
 }
 
 .middle {
-    background-color: #2a2b2dff;
-    top: 40%;
-    position: absolute;
+    background-color: #d5f3fe;
 }
 
-.bottom {
-    background-color: #2a2b2dff;
-    top: 60%;
-    position: absolute;
+.tournamentCards {
+    background-color: #d5f3fe;
+    justify-content: center;
+    align-items: center;
 }
-
 
 .btnCreateTournament {
-    border-radius: 1.5rem;
-    background-color: #2a2b2dff;
+    background-color: #343a40;
     border: none;
     color: white;
     padding: 15px 32px;
@@ -37,6 +40,7 @@
     -moz-appearance: button;
     appearance: button;
     text-decoration: none;
+    border-radius: 1.5rem;
 }
 
 .linkContainer {
@@ -51,6 +55,5 @@
 }
 
 body {
-    background-color: #d9514eff;
     font-family: sans-serif;
 }

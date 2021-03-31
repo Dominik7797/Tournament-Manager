@@ -44,9 +44,7 @@ export default function Login() {
             {isCredentailsValid === false &&
                 <p style={{ color: "red" }}>Email or username is invalid!</p>
             }
-            <button type="submit" style={{
-                borderRadius: '1.5rem', background: '#2a2b2dff', color: 'white'
-            }}>Login</button>
+            <button type="submit" style={{ background: '#2a2b2dff', color: 'white'}}>Login</button>
         </form>
     )
 }

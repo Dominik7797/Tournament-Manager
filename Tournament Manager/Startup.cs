@@ -7,6 +7,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Tournament_Manager.Models;
+using Tournament_Manager.Services;
 
 namespace Tournament_Manager
 {
@@ -36,6 +37,8 @@ namespace Tournament_Manager
             services.AddScoped<ITournamentRepository, SQLTournamentRepository>();
             services.AddScoped<ITournamentManagerRepository, SQLTournamentManagerRepository>();
             services.AddScoped<IUsersRepository, SQLUsersRepository>();
+            services.AddTransient<IHashService, HashService>();
+            services.AddTransient<ILoginService, LoginService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

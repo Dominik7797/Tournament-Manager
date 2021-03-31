@@ -64,5 +64,18 @@ namespace Tournament_Manager.Models
             return updatedUser;
 
         }
+
+        public bool VerifyUser(string username, string email)
+        {
+            foreach (var user in _context.Users)
+            {
+                if (user.Email == email || user.Name == username)
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
     }
 }

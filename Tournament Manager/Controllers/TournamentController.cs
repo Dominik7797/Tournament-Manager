@@ -26,13 +26,23 @@ namespace Tournament_Manager.Controllers
             return _tournamentRepository.GetAllTournaments();
         }
 
-        [HttpPost("/Tournament-create/tournamentName={tName}&tsize={tSize}&ttsize={tTSize}&password={password}&applytime={applyTime}")]
-        public void CreateTournament(string tname, string tSize, string tTSize, string password, string applyTime)
+        [HttpPost("/Tournament-create/tournamentName={tName}&tsize={tSize}&ttsize={tTSize}&password={password}&applytime={applyTime}&type={type}")]
+        public StatusCodeResult CreateTournament(string tname, string tSize, string tTSize, string password, string applyTime, string type)
         {
-            var time = applyTime.Split('-');
-            var dateTime = new DateTime(int.Parse(time[0]), int.Parse(time[1]), int.Parse(time[2]));
-            Tournament tournament = new Tournament(tname, int.Parse(tSize), int.Parse(tTSize), password, dateTime);
-            _tournamentRepository.Add(tournament);
+            Console.WriteLine(tname);
+
+            try
+            {
+                Tournament tournament = new Tournament(tname, int.Parse(tSize), int.Parse(tTSize), password, DateTime.Parse(applyTime), type);
+                _tournamentRepository.Add(tournament);
+                return StatusCode(204);
+            }
+            catch (Exception)
+            {
+                return StatusCode(400);
+            }
+            
+            
         }
 
         [HttpGet("/contestants/{id}")]

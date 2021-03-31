@@ -8,13 +8,14 @@ namespace Tournament_Manager.Models
 {
     public class Tournament
     {
-        public Tournament(string name, int size, int braketSize, string password, DateTime startDate)
+        public Tournament(string name, int size, int braketSize, string password, DateTime startDate, string tournamentType)
         {
             Name = name;
             Size = size;
             BraketSize = braketSize;
             Password = password;
             StartDate = startDate;
+            TournamentType = tournamentType;
         }
 
         [Key]
@@ -23,6 +24,7 @@ namespace Tournament_Manager.Models
         public int Size { get; set; }
         public int BraketSize { get; set; }
         public string Password { get; set; }
+        public string TournamentType { get; set; }
         public DateTime StartDate { get; set; }
     }
 }

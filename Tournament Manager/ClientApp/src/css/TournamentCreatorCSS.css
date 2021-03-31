@@ -10,7 +10,7 @@
 
 .createTournamentBtn {
     width: 100%;
-    background-color: #2a2b2dff;
+    background-color: #343a40;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
@@ -21,7 +21,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 1.5rem;
 }
 
 .creatorForm {
@@ -30,4 +29,9 @@
     padding: 10px;
     justify-content: center;
     align-items: center;
+    border: 2px, #343a40;
+}
+
+body {
+    background-color: #3c99dc;
 }
