@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -25,6 +26,12 @@ namespace Tournament_Manager
         {
 
             services.AddControllersWithViews();
+            services.AddMvc();
+            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(opt =>
+            {
+                opt.LoginPath = "/login/username={username}&password={password}";
+                opt.Cookie.Name = "AuthCookie";
+            });
 
             // In production, the React files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
@@ -39,6 +46,7 @@ namespace Tournament_Manager
             services.AddScoped<IUsersRepository, SQLUsersRepository>();
             services.AddTransient<IHashService, HashService>();
             services.AddTransient<ILoginService, LoginService>();
+            services.AddTransient<ICookieService, CookieService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

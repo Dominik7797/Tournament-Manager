@@ -15,12 +15,14 @@ namespace Tournament_Manager.Controllers
         private readonly IUsersRepository _usersRepository;
         private readonly IHashService _hashService;
         private readonly ILoginService _loginService;
+        private readonly ICookieService _cookieService;
 
-        public AuthController(IUsersRepository usersRepository, IHashService hashService, ILoginService loginService)
+        public AuthController(IUsersRepository usersRepository, IHashService hashService, ILoginService loginService, ICookieService cookieService)
         {
             _usersRepository = usersRepository;
             _hashService = hashService;
             _loginService = loginService;
+            _cookieService = cookieService;
         }
 
         [HttpGet("/verify/username={username}&email={email}&password={password}")]
@@ -38,12 +40,19 @@ namespace Tournament_Manager.Controllers
         {
             if (_loginService.Login(username,password))
             {
+                _cookieService.CreateCookie(username, HttpContext);
                 return true;
             }
             else
             {
                 return false;
             }
+        }
+
+        [HttpGet("/auth/cookie/username")]
+        public string GetCookieData()
+        {
+            return _cookieService.GetCookieData(HttpContext);
         }
     }
 }
