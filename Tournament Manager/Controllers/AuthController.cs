@@ -26,7 +26,7 @@ namespace Tournament_Manager.Controllers
         }
 
         [HttpGet("/verify/username={username}&email={email}&password={password}")]
-        private void RegisterUser(string username,string email, string password)
+        public void RegisterUser(string username,string email, string password)
         {
             if (_usersRepository.VerifyUser(username, email))
             {
@@ -36,7 +36,7 @@ namespace Tournament_Manager.Controllers
         }
 
         [HttpGet("/login/username={username}&password={password}")]
-        private bool LoginUser(string username, string password)
+        public bool LoginUser(string username, string password)
         {
             if (_loginService.Login(username,password))
             {
@@ -50,7 +50,7 @@ namespace Tournament_Manager.Controllers
         }
 
         [HttpGet("/auth/cookie/username")]
-        private string GetCookieData()
+        public string GetCookieData()
         {
             return _cookieService.GetCookieData(HttpContext);
         }

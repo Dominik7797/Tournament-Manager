@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -25,6 +26,12 @@ namespace Tournament_Manager
         {
 
             services.AddControllersWithViews();
+            services.AddMvc();
+            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(opt =>
+            {
+                opt.LoginPath = "/login/username={username}&password={password}";
+                opt.Cookie.Name = "AuthCookie";
+            });
 
             // In production, the React files will be served from this directory
             services.AddSpaStaticFiles(configuration =>

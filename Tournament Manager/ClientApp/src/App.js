@@ -25,11 +25,12 @@ function App() {
 
     const GetCookieData = () => {
         axios.get("/auth/cookie/username").then(data => {
-            console.log(data.data);
+            setUsername(data.data);
         })
     }
 
     return (
+        console.log(username),
             <div className="App">
                 <header className="App-header">
                 </header>
