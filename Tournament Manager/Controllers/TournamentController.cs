@@ -51,5 +51,11 @@ namespace Tournament_Manager.Controllers
             return _tournamentManagerRepository.GetTournamentContestants(int.Parse(id));
         }
 
+        [HttpGet("/tournament/{id}")]
+        public Tournament GetTournamentById(string id)
+        {
+            return _tournamentRepository.GetTournament(int.Parse(id));
+        }
+
     }
 }

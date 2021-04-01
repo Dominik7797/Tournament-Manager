@@ -80,4 +80,8 @@
     bottom: 30px;
     right: 30px;
     letter-spacing: 1px;
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+    text-decoration: none;
 }

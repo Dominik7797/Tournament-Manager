@@ -4,6 +4,9 @@ import '../css/TournamentCardCSS.css'
 import TennisImage from "../images/Tennis.jpg";
 import FootballImage from "../images/football.jfif";
 import BasketballImage from "../images/basketball.png";
+import {
+    Link
+} from "react-router-dom";
 
 function TournamentCard(props) {
 
@@ -31,22 +34,24 @@ function TournamentCard(props) {
         }
     }
 
+    const touramentLink = `/tournament/tournament?id=${props.tournament.id}`
+
     return (
-        <div class="tournaments-container" style={{display:"inline-block"}}>
-            <div class="tournament">
-                <div class="tournament-preview" style={{ backgroundImage: `url(${typeImg})`}}>
+        <div className="tournaments-container" style={{display:"inline-block"}}>
+            <div className="tournament">
+                <div className="tournament-preview" style={{ backgroundImage: `url(${typeImg})`}}>
                     <h6>Tournament type:</h6>
                     <h2>{props.tournament.tournamentType}</h2>
                 </div>
-                <div class="tournament-info">
-                    <div class="tournament-container">
-                        <span class="progress-text">
+                <div className="tournament-info">
+                    <div className="tournament-container">
+                        <span className="progress-text">
                             Tournament size: {props.tournament.size}/{players}
 				</span>
                     </div>
                     <h6>Tournament name:</h6>
                     <h2>{props.tournament.name}</h2>
-                    <button class="btn">Apply</button>
+                    <Link className="btn" to={touramentLink}>Apply</Link>
                 </div>
             </div>
         </div>
