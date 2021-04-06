@@ -15,7 +15,7 @@ import Leaderboard from './components/Leaderboard';
 import '../src/css/MainPageCSS.css';
 import TournamentCreator from './components/TournamentCreator';
 import TournamentNavbar from './components/TournamentNavbar';
-import TournamentDetail from './components/TournamentDetail';
+import TournamentBracket from './components/TournamentBracket';
 function App() {
 
     const [username, setUsername] = useState([]);
@@ -62,7 +62,7 @@ function App() {
                             <Register />
                         </Route>
                         <Route path="/tournament/">
-                            <TournamentDetail />
+                            <TournamentBracket />
                         </Route>
                         <Route path="/">
                             <TournamentNavbar />

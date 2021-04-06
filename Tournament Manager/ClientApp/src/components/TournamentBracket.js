@@ -1,14 +1,16 @@
 ﻿import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-function TournamentDetail() {
+function TournamentBracket() {
     const url = new URL(window.location.href);
     const tournamentId = url.searchParams.get('id');
 
     const [tournament, setTournament] = useState([])
+    const [brackets, setBrackets] = useState([])
 
     useEffect(() => {
         getTournamentById();
+        generateBrackets();
     }, [])
 
     const getTournamentById = () => {
@@ -16,9 +18,7 @@ function TournamentDetail() {
             setTournament(tournament.data)
         })
     }
-
     return (
-        console.log(url),
             <ul className="list-group" style={{ position: 'absolute', textAlign: 'left' }}>
                 <li className="list-group-item" style={{ fontSize: '20px' }}><strong>Title: </strong> {tournament.name}</li>
                 <li className="list-group-item" style={{ fontSize: '20px' }}><strong>Size: </strong> : {tournament.size}</li>
@@ -27,4 +27,4 @@ function TournamentDetail() {
     );
 }
 
-export default TournamentDetail;
+export default TournamentBracket;
