@@ -10,7 +10,7 @@ namespace Tournament_Manager.Services
     {
         public List<User> GetLeaderboardByWins(IEnumerable<User> users)
         {
-            return users.OrderBy(user => user.Wins).ToList();
+            return users.OrderBy(user => user.Wins).Reverse().ToList();
         }
     }
 }

@@ -10,7 +10,6 @@ function TournamentBracket() {
 
     useEffect(() => {
         getTournamentById();
-        generateBrackets();
     }, [])
 
     const getTournamentById = () => {
