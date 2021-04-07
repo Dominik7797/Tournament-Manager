@@ -10,14 +10,14 @@ function Leaderboard() {
 
     const getLeaderboard = () => {
         axios.get("/leaderboardContext").then(data => {
-            console.log(data.data)
+            setLeaderboard(data.data)
         })
     }
 
 
     return (
         <div>
-            Leaderboard
+            {leaderboard.map(player => <div>{player.name}</div>)}
         </div>
     );
 }
