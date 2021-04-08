@@ -24,7 +24,7 @@ namespace Tournament_Manager.Models
             return user;
         }
 
-        public User DeleteUser(int id)
+        public bool DeleteUser(int id)
         {
             var userToDelete = _context.Users.Find(id);
 
@@ -32,8 +32,9 @@ namespace Tournament_Manager.Models
             {
                 _context.Users.Remove(userToDelete);
                 _context.SaveChanges();
+                return true;
             }
-            return userToDelete;
+            return false;
         }
 
         public IEnumerable<User> GetAllUsers()
