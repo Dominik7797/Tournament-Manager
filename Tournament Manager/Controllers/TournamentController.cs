@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Tournament_Manager.Models;
+using Tournament_Manager.Services;
 
 namespace Tournament_Manager.Controllers
 {
@@ -13,11 +14,16 @@ namespace Tournament_Manager.Controllers
     {
         private ITournamentManagerRepository _tournamentManagerRepository;
         private ITournamentRepository _tournamentRepository;
+        private IUsersRepository _usersRepository;
+        private ILeaderboardService _leaderboardService;
 
-        public TournamentController(ITournamentManagerRepository tournamentManagerRepository, ITournamentRepository tournamentRepository)
+        public TournamentController(ITournamentManagerRepository tournamentManagerRepository, ITournamentRepository tournamentRepository, IUsersRepository usersRepository,
+            ILeaderboardService leaderboardService)
         {
             _tournamentManagerRepository = tournamentManagerRepository;
             _tournamentRepository = tournamentRepository;
+            _usersRepository = usersRepository;
+            _leaderboardService = leaderboardService;
         }
 
         [HttpGet]
@@ -49,6 +55,18 @@ namespace Tournament_Manager.Controllers
         public IEnumerable<User> GetContestants(string id)
         {
             return _tournamentManagerRepository.GetTournamentContestants(int.Parse(id));
+        }
+
+        [HttpGet("/tournament/{id}")]
+        public Tournament GetTournamentById(string id)
+        {
+            return _tournamentRepository.GetTournament(int.Parse(id));
+        }
+
+        [HttpGet("/leaderboardContext")]
+        public IEnumerable<User> GetLeaderboards()
+        {
+            return _leaderboardService.GetLeaderboardByWins(_usersRepository.GetAllUsers());
         }
 
     }

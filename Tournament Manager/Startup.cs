@@ -47,6 +47,7 @@ namespace Tournament_Manager
             services.AddTransient<IHashService, HashService>();
             services.AddTransient<ILoginService, LoginService>();
             services.AddTransient<ICookieService, CookieService>();
+            services.AddTransient<ILeaderboardService, LeaderboardService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

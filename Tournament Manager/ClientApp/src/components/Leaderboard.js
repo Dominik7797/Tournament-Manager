@@ -1,9 +1,23 @@
-﻿import React from 'react';
+﻿import React, { useState, useEffect} from 'react';
+import axios from 'axios';
 
-function Leaderboard(){
+function Leaderboard() {
+    const [leaderboard, setLeaderboard] = useState([]);
+
+    useEffect(() => {
+        getLeaderboard();
+    }, []);
+
+    const getLeaderboard = () => {
+        axios.get("/leaderboardContext").then(data => {
+            setLeaderboard(data.data)
+        })
+    }
+
+
     return (
         <div>
-            Leaderboard
+            {leaderboard.map(player => <div>{player.name}</div>)}
         </div>
     );
 }
