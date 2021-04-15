@@ -17,6 +17,16 @@ namespace Tournament_Manager.Models
             StartDate = startDate;
             TournamentType = tournamentType;
         }
+        public Tournament(int id,string name, int size, int braketSize, string password, DateTime startDate, string tournamentType)
+        {
+            Id = id;
+            Name = name;
+            Size = size;
+            BraketSize = braketSize;
+            Password = password;
+            StartDate = startDate;
+            TournamentType = tournamentType;
+        }
 
         [Key]
         public int Id { get; set; }
