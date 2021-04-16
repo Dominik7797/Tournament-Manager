@@ -14,8 +14,9 @@ namespace Tournament_Manager_Tests
         private List<Tournament> _tournamentInMemory = new List<Tournament>();
 
         [Test]
-        public void TestIfWeGetUserById()
+        public void TestIfWeGetTournamentById()
         {
+            _tournamentInMemory.Clear();
             var initTournament = new Tournament(20,"testT",16,2,"none",new DateTime(2020,03,03), "Tennis");
             _tournamentInMemory.Add(initTournament);
 
@@ -37,6 +38,46 @@ namespace Tournament_Manager_Tests
             {
                 Assert.Pass();
             }
+        }
+
+        [Test]
+        public void TestIfWeGetAllTournaments()
+        {
+            _tournamentInMemory.Clear();
+            var initTournament = new Tournament(20, "testT", 16, 2, "none", new DateTime(2020, 03, 03), "Tennis");
+            var initTournament2 = new Tournament(21, "testTt", 16, 2, "none", new DateTime(2020, 03, 03), "Tennis");
+            var initTournament3 = new Tournament(22, "testTtt", 16, 2, "none", new DateTime(2020, 03, 03), "Tennis");
+            _tournamentInMemory.Add(initTournament);
+            _tournamentInMemory.Add(initTournament2);
+            _tournamentInMemory.Add(initTournament3);
+
+            var repository = new Mock<ITournamentRepository>();
+
+            repository.Setup(x => x.GetAllTournaments())
+            .Returns(_tournamentInMemory);
+
+            var tournaments = repository.Object.GetAllTournaments();
+
+            Assert.AreEqual(_tournamentInMemory, tournaments);
+        }
+
+        [Test]
+        public void TestIfWeGetSearchedTournaments()
+        {
+            _tournamentInMemory.Clear();
+            var initTournament = new Tournament(20, "testT", 16, 2, "none", new DateTime(2020, 03, 03), "Tennis");
+            var initTournament2 = new Tournament(21, "testT", 16, 2, "none", new DateTime(2020, 03, 03), "Tennis");
+            _tournamentInMemory.Add(initTournament);
+            _tournamentInMemory.Add(initTournament2);
+
+            var repository = new Mock<ITournamentRepository>();
+
+            repository.Setup(x => x.GetSearchedTournament(It.IsAny<string>()))
+            .Returns((string keyword) => _tournamentInMemory.Where(x => x.Name == keyword).ToList());
+
+            var tournamentSearched = repository.Object.GetSearchedTournament("testT");
+
+            Assert.AreEqual(_tournamentInMemory, tournamentSearched);
         }
     }
 }
