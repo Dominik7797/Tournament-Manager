@@ -1,8 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using System;
+﻿using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.Security.Claims;
 using Tournament_Manager.Models;
 using Tournament_Manager.Services;
 
@@ -15,32 +15,44 @@ namespace Tournament_Manager.Controllers
         private readonly IUsersRepository _usersRepository;
         private readonly IHashService _hashService;
         private readonly ILoginService _loginService;
-        private readonly ICookieService _cookieService;
 
-        public AuthController(IUsersRepository usersRepository, IHashService hashService, ILoginService loginService, ICookieService cookieService)
+        public AuthController(IUsersRepository usersRepository, IHashService hashService, ILoginService loginService)
         {
             _usersRepository = usersRepository;
             _hashService = hashService;
             _loginService = loginService;
-            _cookieService = cookieService;
         }
 
         [HttpGet("/verify/username={username}&email={email}&password={password}")]
-        public void RegisterUser(string username,string email, string password)
+        public ActionResult RegisterUser(string username, string email, string password)
         {
             if (_usersRepository.VerifyUser(username, email))
             {
                 var hashPassword = _hashService.Hash(password);
+                CreateCookie(username);
                 _usersRepository.Add(new User(username, email, hashPassword));
+                return Redirect("/");
+            }
+            else
+            {
+                return StatusCode(700);
             }
         }
 
-        [HttpGet("/login/username={username}&password={password}")]
-        public bool LoginUser(string username, string password)
+        [HttpGet("/getCookieData")]
+        public string GetCookieData()
         {
-            if (_loginService.Login(username,password))
+            var user = HttpContext.User;
+            return user.Identity.Name;
+        }
+
+        [HttpGet("/login/username={username}&password={password}")]
+        public bool Login(string username, string password)
+        {
+
+            if (_loginService.Login(username, password))
             {
-                _cookieService.CreateCookie(username, HttpContext);
+                CreateCookie(username);
                 return true;
             }
             else
@@ -49,10 +61,25 @@ namespace Tournament_Manager.Controllers
             }
         }
 
-        [HttpGet("/auth/cookie/username")]
-        public string GetCookieData()
+        [HttpGet("/logout")]
+        public RedirectResult Logout()
         {
-            return _cookieService.GetCookieData(HttpContext);
+            HttpContext.SignOutAsync();
+            return Redirect("/");
+        }
+
+        private async void CreateCookie(string username)
+        {
+            var claims = new List<Claim>
+                {
+                    new Claim(ClaimTypes.Name,username)
+                };
+            var identity = new ClaimsIdentity(
+                claims, CookieAuthenticationDefaults.AuthenticationScheme
+                );
+            var principal = new ClaimsPrincipal(identity);
+            var props = new AuthenticationProperties();
+            await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal, props);
         }
     }
 }

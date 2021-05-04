@@ -25,7 +25,7 @@ function App() {
     }, []);
 
     const GetCookieData = () => {
-        axios.get("/auth/cookie/username").then(data => {
+        axios.get("/getCookieData").then(data => {
             setUsername(data.data);
         })
     }

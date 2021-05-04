@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -18,7 +18,6 @@ namespace Tournament_Manager
         {
             Configuration = configuration;
         }
-
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
@@ -46,7 +45,6 @@ namespace Tournament_Manager
             services.AddScoped<IUsersRepository, SQLUsersRepository>();
             services.AddTransient<IHashService, HashService>();
             services.AddTransient<ILoginService, LoginService>();
-            services.AddTransient<ICookieService, CookieService>();
             services.AddTransient<ILeaderboardService, LeaderboardService>();
         }
 
