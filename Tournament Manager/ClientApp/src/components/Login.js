@@ -1,5 +1,6 @@
-﻿import React, { useState } from 'react'
-import axios from 'axios'
+﻿import React, { useState } from 'react';
+import axios from 'axios';
+import '../css/AuthFormsCSS.css';
 
 export default function Login() {
     const [username, setUsername] = useState([]);
@@ -24,27 +25,27 @@ export default function Login() {
 
     return (
         <form method="POST" action="/login" onSubmit={handleSubmit}>
-            <div className="container login-form">
-                <div className="row">
-                    <div className="col-md-6">
-                        <div className="form-group">
-                            <input type="text" className="form-control" onChange={handleChange} name='Username' placeholder="Your Username *" />
-                        </div>
-                    </div>
-                    <div className="col-md-6">
-                        <div className="form-group">
-                            <input type="password" className="form-control" onChange={handleChange} name='Password' placeholder="Your Password *" />
-                        </div>
-                    </div>
+            <div id="container">
+                <div id="left">
+                </div>
+                <div id="right">
+                    <h1 id="login">LogIn</h1><br></br>
+                    <input id="Username" name="Username" onChange={handleChange} class="client-info" />
+                    <label for="Username">Username</label>
+                    <input type="password" id="password" onChange={handleChange} name="Password" class="client-info" />
+                    <label for="password">Password</label>
+                    {isCredentailsValid === true &&
+                        <p style={{ color: "green" }}>Success!</p>
+                    }
+                    {isCredentailsValid === false &&
+                        <p style={{ color: "red" }}>Password or username is invalid!</p>
+                    }
+                    <input type="submit" id="submit" class="client-info" value="Submit" />
+                    <button class="social" id="facebook">connect with facebook</button>
+                    <button class="social" id="google">connect with google</button>
                 </div>
             </div>
-            {isCredentailsValid === true &&
-                <p style={{ color: "green" }}>Success!</p>
-            }
-            {isCredentailsValid === false &&
-                <p style={{ color: "red" }}>Email or username is invalid!</p>
-            }
-            <button type="submit" style={{ background: '#2a2b2dff', color: 'white'}}>Login</button>
+            
         </form>
     )
 }
