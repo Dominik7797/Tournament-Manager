@@ -1,5 +1,6 @@
 ﻿import React, { useState } from 'react'
 import axios from 'axios';
+import '../css/AuthFormsCSS.css';
 
 export default function Register() {
 
@@ -59,49 +60,40 @@ export default function Register() {
     }
 
     return (
+        <div className="mainDiv">
         <form onSubmit={formSubmit}>
-            <div className="container register-form">
-                <div className="row">
-                    <div className="col-md-6">
-                        <div className="form-group">
-                            <input type="text" className="form-control" onChange={handleUserInputChange} name='Username' placeholder="Your Username *" />
-                            {isValidUsername === false && username.length > 1 &&
-                                <p style={{ color: "red" }}>Invalid Username!</p>
-                            }
-                        </div>
-                        <div className="form-group">
-                            <input type="text" className="form-control" onChange={handleUserInputChange} name='Email' placeholder="Your Email *" />
-                            {isValidEmail === false && email.length > 1 &&
-                                <p style={{ color: "red" }}>Invalid Email!</p>
-                            }
-                        </div>
-                    </div>
-                    <div className="col-md-6">
-                        <div className="form-group">
-                            <input type="password" className="form-control" onChange={handleUserInputChange} name='Password' placeholder="Your Password *" />
-                        </div>
-                        <div className="form-group">
-                            <input type="password" className="form-control" onChange={handleUserInputChange} name='PasswordRe' placeholder="Confirm Password *" />
-                        </div>
-                        {password !== passwordRe && password.length > 1 && passwordRe.length > 1 &&
-                            <p style={{ color: "red" }}>Passwords does not match!</p>
-                        }
-                    </div>
+            <div id="container">
+                <div id="left">
+                </div>
+                <div id="right">
+                    <h1 id="login">Register</h1><br></br>
+                    <input id="Username" name="Username" onChange={handleUserInputChange} class="client-info" />
+                    <label for="Username">Username</label>
+                    {isValidUsername === false && username.length > 1 &&
+                        <p style={{ color: "red" }}>Invalid Username!</p>
+                    }
+                    <input type="Email" id="Email" onChange={handleUserInputChange} name="Email" class="client-info" />
+                    <label for="Email">Email</label>
+                    <input type="password" id="password" onChange={handleUserInputChange} name="Password" class="client-info" />
+                    <label for="password">Password</label>
+                    <input type="password" id="password-re" onChange={handleUserInputChange} name="PasswordRe" class="client-info" />
+                    <label for="password-re">Password-Re</label>
+                    {password !== passwordRe && password.length > 1 && passwordRe.length > 1 &&
+                        <p style={{ color: "red" }}>Passwords does not match!</p>
+                    }
+                    {isCredentailsValid === true &&
+                        <p style={{ color: "green" }}>Success!</p>
+
+                    }
+                    {isCredentailsValid === false &&
+                        <p style={{ color: "red" }}>Email or username is taken!</p>
+                    }
+                    {isValidUsername === true && isValidEmail === true && password === passwordRe &&
+                        <input type="submit" id="submit" class="client-info" value="Submit" />
+                    }
                 </div>
             </div>
-            {isCredentailsValid === true &&
-                <p style={{ color: "green" }}>Success!</p>
-
-            }
-            {isCredentailsValid === false &&
-                <p style={{ color: "red" }}>Email or username is taken!</p>
-            }
-            {isValidUsername === true && isValidEmail === true && password === passwordRe &&
-                <button type="submit" style={{
-                    border: 'none',
-                    padding: '1%', width: '12%', cursor: 'pointer', background: '#2a2b2dff', color: '#fff'
-                }}>Register</button>
-            }
-        </form>
+            </form>
+            </div>
     )
 }

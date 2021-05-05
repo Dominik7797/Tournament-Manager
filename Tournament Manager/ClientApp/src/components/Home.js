@@ -1,32 +1,20 @@
-﻿import React, {useEffect, useState} from 'react';
-import { Link } from 'react-router-dom';
-import TournamentCard from './TournamentCard';
-import axios from 'axios';
-import '../../src/css/MainPageCSS.css';
+﻿import React from 'react';
+import '../css/MainPageCSS.css';
 
 function Home() {
-    const [tournaments, setTournaments] = useState([]);
-
-    const getData = () => {
-        axios.get("/tournamentApi").then(data => setTournaments(data.data));
-    }
-
-    useEffect(() => {
-        getData();
-    }, []);
 
     return (
-        <div className="mainPage">
-            <div className="top">
-                <p className="mainTitle">TOURNAMENT MANAGER</p>
-                <div className="linkContainer">
-                    <Link to='/tournament-create' className="btnCreateTournament">Create Tournament</Link>
-                    <Link to='/tournaments' className="btnCreateTournament">Join Tournament</Link>
+        <div>
+            <div class="split left">
+                <div class="centered">
+                    <h1>Join Tournament</h1>
                 </div>
             </div>
-            <div className="middle">
-                <p className="mainTitleMiddle">FEATURED TOURNAMENTS</p>
-                <div className="tournamentCards">{tournaments.map(tournament => <TournamentCard tournament={tournament} />)}</div>
+
+            <div class="split right">
+                <div class="centered">
+                    <h2>Create Tournament</h2>
+                </div>
             </div>
         </div>
     );

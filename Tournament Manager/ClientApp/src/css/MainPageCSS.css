@@ -1,59 +1,62 @@
-﻿.mainTitle {
+﻿.* {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+h1 {
+    font-size: 4rem;
+    color: #fff;
+    position: absolute;
+    left: 50%;
+    top: 20%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+}
+
+h2 {
+    font-size: 4rem;
+    color: #fff;
+    position: absolute;
+    left: 50%;
+    top: 20%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+}
+
+.split {
+    height: 100%;
+    width: 50%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+
+.left {
+    left: 0;
+    background-image: url("../images/Tennis.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.right {
+    right: 0;
+    background-image: url("../images/Football.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     text-align: center;
-    font-size: 55px;
-    color: white;
 }
 
-.mainTitleMiddle {
-    text-align: center;
-    color: black;
-    font-size: 35px;
-}
-
-
-.top {
-    background-color: #3c99dc;
-}
-
-.middle {
-    background-color: #d5f3fe;
-}
-
-.tournamentCards {
-    background-color: #d5f3fe;
-    justify-content: center;
-    align-items: center;
-}
-
-.btnCreateTournament {
-    background-color: #343a40;
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    -webkit-appearance: button;
-    -moz-appearance: button;
-    appearance: button;
-    text-decoration: none;
-    border-radius: 1.5rem;
-}
-
-.linkContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.btnForm {
-    align-items: center;
-    justify-content: center;
-}
-
-body {
-    font-family: sans-serif;
-}
+    .centered img {
+        width: 150px;
+        border-radius: 50%;
+    }

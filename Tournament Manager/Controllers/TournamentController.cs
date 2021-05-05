@@ -16,16 +16,14 @@ namespace Tournament_Manager.Controllers
         private ITournamentRepository _tournamentRepository;
         private IUsersRepository _usersRepository;
         private ILeaderboardService _leaderboardService;
-        private ICookieService _cookieService;
 
         public TournamentController(ITournamentManagerRepository tournamentManagerRepository, ITournamentRepository tournamentRepository, IUsersRepository usersRepository,
-            ILeaderboardService leaderboardService, ICookieService cookieService)
+            ILeaderboardService leaderboardService)
         {
             _tournamentManagerRepository = tournamentManagerRepository;
             _tournamentRepository = tournamentRepository;
             _usersRepository = usersRepository;
             _leaderboardService = leaderboardService;
-            _cookieService = cookieService;
         }
 
         [HttpGet]
@@ -74,11 +72,7 @@ namespace Tournament_Manager.Controllers
         [HttpGet("/join/{id}")]
         public void JoinTournament(string id)
         {
-            string cookieData = _cookieService.GetCookieData(HttpContext);
-            if (cookieData != null)
-            {
-                
-            }
+
         }
 
     }
