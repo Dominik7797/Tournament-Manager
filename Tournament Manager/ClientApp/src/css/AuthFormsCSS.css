@@ -1,10 +1,7 @@
-﻿* {
+﻿.mainDiv{
     margin: 0;
     padding: 0;
     outline: none;
-}
-
-:root {
     --main-color: #fff;
     --second-color: #347deb;
     --box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);

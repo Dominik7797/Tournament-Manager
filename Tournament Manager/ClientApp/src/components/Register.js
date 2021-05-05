@@ -60,6 +60,7 @@ export default function Register() {
     }
 
     return (
+        <div className="mainDiv">
         <form onSubmit={formSubmit}>
             <div id="container">
                 <div id="left">
@@ -92,6 +93,7 @@ export default function Register() {
                     }
                 </div>
             </div>
-        </form>
+            </form>
+            </div>
     )
 }

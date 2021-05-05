@@ -24,6 +24,7 @@ export default function Login() {
     }
 
     return (
+        <div className="mainDiv">
         <form method="POST" action="/login" onSubmit={handleSubmit}>
             <div id="container">
                 <div id="left">
@@ -46,6 +47,7 @@ export default function Login() {
                 </div>
             </div>
             
-        </form>
+            </form>
+        </div>
     )
 }

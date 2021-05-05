@@ -3,35 +3,19 @@ import {
     BrowserRouter as Router,
     Switch,
     Route,
-    Link
 } from "react-router-dom";
 import Home from './components/Home';
 import Login from './components/Login';
 import Register from './components/Register';
-import axios from 'axios';
 import Tournaments from './components/Tournaments';
 import Account from './components/Account';
 import Leaderboard from './components/Leaderboard';
-import '../src/css/MainPageCSS.css';
 import TournamentCreator from './components/TournamentCreator';
 import TournamentNavbar from './components/TournamentNavbar';
 import TournamentBracket from './components/TournamentBracket';
 function App() {
 
-    const [username, setUsername] = useState([]);
-
-    useEffect(() => {
-        GetCookieData();
-    }, []);
-
-    const GetCookieData = () => {
-        axios.get("/getCookieData").then(data => {
-            setUsername(data.data);
-        })
-    }
-
     return (
-        console.log(username),
             <div className="App">
                 <header className="App-header">
                 </header>
