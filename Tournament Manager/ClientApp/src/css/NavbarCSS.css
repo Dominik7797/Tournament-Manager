@@ -4,6 +4,7 @@
 
     .navbar .nav-link {
         color: #fff;
+        font-size: 20px;
     }
 
         .navbar .nav-link:hover,
@@ -14,6 +15,7 @@
 
     .navbar .navbar-brand {
         color: #fff;
+        font-size: 25px;
     }
 
 
@@ -36,3 +38,24 @@
         .navbar.active .navbar-brand {
             color: #555;
         }
+
+.arrow {
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+}
+
+#drp-down-show{
+    background-color: transparent;
+}
+
+#link1{
+    font-size: 15px;
+    text-align:center;
+}
+
+#link2 {
+    font-size: 15px;
+    text-align:center;
+}
