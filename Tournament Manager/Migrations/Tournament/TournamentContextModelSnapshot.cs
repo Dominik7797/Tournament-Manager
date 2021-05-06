@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Tournament_Manager.Models;
 
-namespace Tournament_Manager.Migrations
+namespace Tournament_Manager.Migrations.Tournament
 {
     [DbContext(typeof(TournamentContext))]
     partial class TournamentContextModelSnapshot : ModelSnapshot

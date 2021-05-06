@@ -85,7 +85,7 @@ export default function Register() {
                         <p style={{ color: "green" }}>Success!</p>
 
                     }
-                    {isCredentailsValid === false &&
+                    {isCredentailsValid === 700 &&
                         <p style={{ color: "red" }}>Email or username is taken!</p>
                     }
                     {isValidUsername === true && isValidEmail === true && password === passwordRe &&

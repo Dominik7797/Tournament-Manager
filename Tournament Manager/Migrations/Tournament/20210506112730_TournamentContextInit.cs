@@ -1,9 +1,9 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace Tournament_Manager.Migrations
+namespace Tournament_Manager.Migrations.Tournament
 {
-    public partial class TournamentManager : Migration
+    public partial class TournamentContextInit : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
