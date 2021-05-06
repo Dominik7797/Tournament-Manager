@@ -40,6 +40,7 @@ namespace Tournament_Manager
 
             services.AddDbContext<TournamentContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("DevConnection")));
             services.AddDbContext<UserContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("DevConnection")));
+
             services.AddScoped<ITournamentRepository, SQLTournamentRepository>();
             services.AddScoped<ITournamentManagerRepository, SQLTournamentManagerRepository>();
             services.AddScoped<IUsersRepository, SQLUsersRepository>();
@@ -67,6 +68,8 @@ namespace Tournament_Manager
             app.UseSpaStaticFiles();
 
             app.UseRouting();
+            app.UseAuthentication();
+            app.UseCookiePolicy();
 
             app.UseEndpoints(endpoints =>
             {

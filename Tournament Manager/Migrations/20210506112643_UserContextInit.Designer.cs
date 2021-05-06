@@ -6,11 +6,11 @@ using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Tournament_Manager.Models;
 
-namespace Tournament_Manager.Migrations.User
+namespace Tournament_Manager.Migrations
 {
     [DbContext(typeof(UserContext))]
-    [Migration("20210320083031_TournamentMigration")]
-    partial class TournamentMigration
+    [Migration("20210506112643_UserContextInit")]
+    partial class UserContextInit
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

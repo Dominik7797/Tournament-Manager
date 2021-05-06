@@ -1,4 +1,4 @@
-﻿.mainDiv{
+﻿.mainDiv {
     margin: 0;
     padding: 0;
     outline: none;
@@ -7,13 +7,7 @@
     --box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
     --facebook-color: rgb(60, 90, 154);
     --google-color: rgb(220, 74, 61);
-}
-
-html {
     height: 100%;
-}
-
-body {
     background-image: linear-gradient(310deg, #df98fa, #9055ff);
     font-family: sans-serif;
 }

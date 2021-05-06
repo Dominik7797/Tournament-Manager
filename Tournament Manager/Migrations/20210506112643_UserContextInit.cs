@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace Tournament_Manager.Migrations.User
+namespace Tournament_Manager.Migrations
 {
-    public partial class TournamentMigration : Migration
+    public partial class UserContextInit : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

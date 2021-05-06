@@ -1,28 +1,69 @@
-﻿.navbar-expand-custom {
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
+﻿.navbar {
+    transition: all 0.4s;
 }
 
-.navbar-expand-custom .navbar-nav {
-    flex-direction: row;
+    .navbar .nav-link {
+        color: #fff;
+        font-size: 20px;
+    }
+
+        .navbar .nav-link:hover,
+        .navbar .nav-link:focus {
+            color: #fff;
+            text-decoration: none;
+        }
+
+    .navbar .navbar-brand {
+        color: #fff;
+        font-size: 25px;
+    }
+
+
+    /* Change navbar styling on scroll */
+    .navbar.active {
+        background: #fff;
+        box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+        .navbar.active .nav-link {
+            color: #555;
+        }
+
+            .navbar.active .nav-link:hover,
+            .navbar.active .nav-link:focus {
+                color: #555;
+                text-decoration: none;
+            }
+
+        .navbar.active .navbar-brand {
+            color: #555;
+        }
+
+.arrow {
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
 }
 
-.navbar-expand-custom .navbar-nav .nav-link {
-    padding-right: .5rem;
-    padding-left: .5rem;
+#drp-down-show{
+    background-color: transparent;
 }
 
-.navbar-expand-custom .navbar-collapse {
-    display: flex !important;
+#link1{
+    font-size: 15px;
+    text-align:center;
 }
 
-.navbar-expand-custom .navbar-toggler {
-    display: none;
+#link2 {
+    font-size: 15px;
+    text-align:center;
 }
-
-.navbar-expand-custom .navbar-nav .dropdown-menu {
-    position: absolute;
+#link3 {
+    font-size: 15px;
+    text-align: center;
 }
-
-
+#link4 {
+    font-size: 15px;
+    text-align: center;
+}

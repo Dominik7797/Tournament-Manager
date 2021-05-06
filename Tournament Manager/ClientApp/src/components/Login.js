@@ -36,7 +36,7 @@ export default function Login() {
                     <input type="password" id="password" onChange={handleChange} name="Password" class="client-info" />
                     <label for="password">Password</label>
                     {isCredentailsValid === true &&
-                        <p style={{ color: "green" }}>Success!</p>
+                         window.location.reload()
                     }
                     {isCredentailsValid === false &&
                         <p style={{ color: "red" }}>Password or username is invalid!</p>
