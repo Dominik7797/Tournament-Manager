@@ -60,3 +60,58 @@ h2 {
         width: 150px;
         border-radius: 50%;
     }
+
+
+.split.left,
+.split.right,
+.split.left:before,
+.split.right:before {
+    transition: var(--speed) all ease-in-out;
+}
+
+/* Mouse Hover Left */
+
+.hover-left .left {
+    width: var(--hover-width);
+}
+
+.hover-left .right {
+    width: var(--other-width);
+}
+
+    .hover-left .right:before {
+        /* Fade right side */
+        z-index: 2;
+    }
+
+/* Mouse Hover Right */
+.hover-right .left {
+    width: var(--other-width);
+}
+
+.hover-right .right {
+    width: var(--hover-width);
+}
+
+.hover-right .left:before {
+    /* Fade left side */
+    z-index: 2;
+}
+
+
+@media only screen and (max-width: 800px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    .button {
+        width: 12rem;
+    }
+}
+
+@media(max-height: 700px) {
+    .button {
+        top: 70%;
+    }
+}
+
