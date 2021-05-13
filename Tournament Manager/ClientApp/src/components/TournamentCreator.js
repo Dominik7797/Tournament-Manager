@@ -1,5 +1,6 @@
 ﻿import React, { useState } from 'react'
 import axios from 'axios';
+import '../css/AuthFormsCSS.css';
 
 function TournamentCreator() {
 
@@ -16,33 +17,39 @@ function TournamentCreator() {
         if (password.length == 0) {
             password = "0";
         }
-        axios.post(`/Tournament-create/tournamentName=${tournamentName}&tsize=${tournamentSize}&ttsize=${tournamentBracketSize}&password=${password}&applytime=${datetime}&type=${type}`)
+        axios.post(`/Tournament-create/tournamentName=${tournamentName}&password=${password}&type=${type}`)
             .then(data => {
                 setStatusCode(data.status);
             }
         )
     }
 
+    
+
     return (
-        <form className="creatorForm" onSubmit={createTournament}>
-                <label htmlFor="tname">Tournament Name</label>
-                <input type="text" id="tname" name="tournamentName" placeholder="Tournament name.." required/>
-                <label htmlFor="tsize">Tournament Size</label>
-                <input type="text" id="tsize" name="tsize" placeholder="Tournament maximum player size eg. 30" required/>
-                <label htmlFor="ttsize">Tournament Team Size</label>
-                <input type="text" id="ttsize" name="ttsize" placeholder="Tournament maximum player/team size eg. 3" required/>
-                <label htmlFor="password">Password</label>
-                <input type="text" id="password" name="password" placeholder="Password (optional)" />
-                <label htmlFor="applytime">How long till players can apply</label>
-                <input type="text" id="applytime" name="applytime" placeholder="eg. 2021-03-29" required/>
-                <label htmlFor="Typeselect">Select tournament type</label>
-                <select id="Typeselect" name="Typeselect" required>
-                    <option name="Tennis" value="Tennis">Tennis</option>
-                    <option name="Football" value="Football">Football</option>
-                    <option name="Basketball" value="Basketball">Basketball</option>
-                </select>
-                <input className="createTournamentBtn" type="submit" value="Create Tournament" />
-        </form>
+        <div className="mainDiv">
+            <form method="POST" onSubmit={createTournament}>
+                <div id="container">
+                    <div id="left">
+                    </div>
+                    <div id="right">
+                        <h1 id="mainTitleRight">Tournament Creator</h1><br></br>
+                        <label htmlFor="tname">Tournament Name</label>
+                        <input className="client-info" type="text" id="tname" name="tName" placeholder="Tournament name.." required />
+                        <label htmlFor="password">Password</label>
+                        <input className="client-info" type="text" id="password" name="password" placeholder="Password (optional)" />
+                        <label htmlFor="Typeselect">Select tournament type</label>
+                        <select className="client-info" id="Typeselect" name="Typeselect" required>
+                            <option name="Tennis" value="Tennis">Tennis</option>
+                            <option name="Football" value="Football">Football</option>
+                            <option name="Basketball" value="Basketball">Basketball</option>
+                        </select>
+                        <input type="submit" id="submit" class="client-info" value="Create" />
+                    </div>
+                </div>
+
+            </form>
+        </div>
 
     );
 }

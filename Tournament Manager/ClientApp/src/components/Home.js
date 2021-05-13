@@ -11,14 +11,14 @@ function Home() {
     return (
         <div className="container">
             <div className="split left" onMouseEnter={toggleClass}>
-                    <div className="centered">
-                        <h1 className="joinTournament">Join Tournament</h1>
-                    </div>
+                <div className="centered">
+                    <h1 className="mainTitle">Join Tournament</h1>
+                </div>
             </div>
 
             <div className="split right">
                 <div className="centered">
-                    <h2>Create Tournament</h2>
+                    <h2 className="mainTitle">Create Tournament</h2>
                 </div>
             </div>
         </div>

@@ -53,7 +53,7 @@
     text-shadow: var(--box-shadow);
 }
 
-#login {
+.mainTitleRight {
     padding-top: 35%;
     text-align: center;
     text-transform: uppercase;

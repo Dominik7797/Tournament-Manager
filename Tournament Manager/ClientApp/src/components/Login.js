@@ -30,8 +30,8 @@ export default function Login() {
                 <div id="left">
                 </div>
                 <div id="right">
-                    <h1 id="login">LogIn</h1><br></br>
-                    <input id="Username" name="Username" onChange={handleChange} class="client-info" />
+                    <h1 id="mainTitleRight">LogIn</h1><br></br>
+                    <input id="Username" name="Username" onChange={handleChange} className="client-info" />
                     <label for="Username">Username</label>
                     <input type="password" id="password" onChange={handleChange} name="Password" class="client-info" />
                     <label for="password">Password</label>
