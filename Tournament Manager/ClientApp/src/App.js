@@ -13,6 +13,7 @@ import Leaderboard from './components/Leaderboard';
 import TournamentCreator from './components/TournamentCreator';
 import TournamentNavbar from './components/TournamentNavbar';
 import TournamentBracket from './components/TournamentBracket';
+import './css/RootCSS.css'
 function App() {
 
     return (

@@ -34,16 +34,16 @@ function TournamentCreator() {
                     </div>
                     <div id="right">
                         <h1 id="mainTitleRight">Tournament Creator</h1><br></br>
-                        <label htmlFor="tname">Tournament Name</label>
                         <input className="client-info" type="text" id="tname" name="tName" placeholder="Tournament name.." required />
-                        <label htmlFor="password">Password</label>
+                        <label htmlFor="tname">Tournament Name</label>
                         <input className="client-info" type="text" id="password" name="password" placeholder="Password (optional)" />
-                        <label htmlFor="Typeselect">Select tournament type</label>
+                        <label htmlFor="password">Password</label>
                         <select className="client-info" id="Typeselect" name="Typeselect" required>
                             <option name="Tennis" value="Tennis">Tennis</option>
                             <option name="Football" value="Football">Football</option>
                             <option name="Basketball" value="Basketball">Basketball</option>
                         </select>
+                        <label htmlFor="Typeselect">Select tournament type</label>
                         <input type="submit" id="submit" class="client-info" value="Create" />
                     </div>
                 </div>
